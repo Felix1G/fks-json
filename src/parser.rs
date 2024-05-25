@@ -122,7 +122,7 @@ fn parse_num(str: &String, line: usize, pos: usize) -> Result<(i64, f64, bool), 
                     }
                 }
             }
-
+            
             if str.contains('.')
                 || str.contains('f')
                 || str.contains('F')
@@ -234,7 +234,7 @@ fn parse_num(str: &String, line: usize, pos: usize) -> Result<(i64, f64, bool), 
                 if negative {
                     num = -num;
                 }
-
+                
                 return Ok((0, num, true));
             } else {
                 //number
@@ -259,7 +259,7 @@ fn parse_num(str: &String, line: usize, pos: usize) -> Result<(i64, f64, bool), 
                             let typ_b = typ as u8;
                             if typ_b >= b'0' && typ_b <= b'7' {
                                 num = (typ_b - b'0') as u64;
-                            } else {
+                            } else if typ != 'o' && typ != 'O' {
                                 return Err(ParserError::IntegerInvalidOctal(
                                     typ,
                                     line,
@@ -688,7 +688,7 @@ fn lexer(p_chars: Chars) -> Result<Vec<Token>, ParserError> {
                     num_pos.line,
                     num_pos.pos,
                 ));
-                //num_str.clear();
+                // num_str.clear();
             }
             break;
         }

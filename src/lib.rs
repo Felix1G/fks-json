@@ -431,7 +431,7 @@ impl JsonObject {
     ) {
         match value.typ {
             JsonType::Int => str.push_str(&(value.val as i64).to_string()),
-            JsonType::Float => str.push_str(format!("{}", &f64::from_bits(value.val)).as_str()),
+            JsonType::Float => str.push_str(format!("{:?}", &f64::from_bits(value.val)).as_str()),
             JsonType::Boolean => str.push_str(if value.val == 1 { &"true" } else { &"false" }),
             JsonType::String => Self::push_string(str, cxt.strings.get(&value.val).unwrap()),
             JsonType::Null => str.push_str("null"),
