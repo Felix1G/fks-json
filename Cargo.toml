@@ -1,0 +1,16 @@
+[package]
+name = "fksjson"
+version = "0.1.0"
+authors = ["Felix K.S."]
+edition = "2021"
+
+[lib]
+name = "fksjson"
+path = "src/lib.rs"
+
+[[bin]]
+name = "fksjsonbin"
+path = "src/bin/main.rs"
+
+[dependencies]
+indexmap = "2.2.6"

@@ -1,0 +1,10 @@
+/target
+/.cache
+/.cargo
+/.git
+/.upm
+/.replit
+Cargo.lock
+replit_zip_error_log.txt
+todo.txt
+test.json
