@@ -1,4 +1,4 @@
-# fksjson
+# fks-json
  JSON Parser using Rust I made for fun. Includes a lot of error handling.
 
 A piece of JSON code valid according to my parser:
